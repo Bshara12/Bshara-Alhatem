@@ -81,10 +81,12 @@ const filterItems = document.querySelectorAll("[data-filter-item]");
 const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
+    const raw = (filterItems[i].dataset.category || '').toLowerCase();
+    const cats = raw.split(',').map(s => s.trim()).filter(Boolean);
 
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (cats.includes(selectedValue)) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -116,6 +118,47 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 // contact form variables
+// Scroll Reveal: observe elements with [data-reveal]
+(function setupScrollReveal(){
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window) || revealEls.length === 0) {
+    // Fallback: reveal immediately
+    revealEls.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  revealEls.forEach((el, idx) => {
+    if (!el.style.getPropertyValue('--reveal-delay')) {
+      el.style.setProperty('--reveal-delay', (idx % 6) * 0.06 + 's');
+    }
+    io.observe(el);
+  });
+})();
+// Portfolio open animation (stagger cards) when page becomes active
+function animatePortfolioEntrance(){
+  const portfolio = document.querySelector('article.portfolio');
+  if(!portfolio) return;
+  const items = portfolio.querySelectorAll('.project-list .project-item');
+  let delay = 0;
+  items.forEach((el)=>{
+    el.classList.add('stagger-in');
+    el.style.setProperty('--stagger-delay', `${delay}ms`);
+    delay += 60; // 60ms steps
+  });
+  // remove helper class after animation to avoid reflow issues
+  setTimeout(()=> items.forEach(el=> el.classList.remove('stagger-in')), delay + 600);
+}
+// trigger on initial load if portfolio is the first active
+if (document.querySelector('article.portfolio.active')) {
+  animatePortfolioEntrance();
+}
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");

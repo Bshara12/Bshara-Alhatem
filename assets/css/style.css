@@ -226,6 +226,22 @@ article.active {
   animation: fade 0.5s ease backwards;
 }
 
+/* About page intro animation */
+article.about.active .about-intro {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUpAbout 0.7s ease forwards 0.15s;
+}
+article.about.active .about-text p:nth-child(1) {
+  opacity: 0; transform: translateY(10px);
+  animation: fadeUpAbout 0.7s ease forwards 0.3s;
+}
+article.about.active .about-text p:nth-child(2) {
+  opacity: 0; transform: translateY(10px);
+  animation: fadeUpAbout 0.7s ease forwards 0.45s;
+}
+@keyframes fadeUpAbout { to { opacity: 1; transform: none; } }
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -233,6 +249,34 @@ article.active {
   100% {
     opacity: 1;
   }
+}
+
+/* About: service items stagger */
+article.about.active .service-list .service-item {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUpAbout 0.6s ease forwards;
+}
+article.about.active .service-list .service-item:nth-child(1) { animation-delay: .15s; }
+article.about.active .service-list .service-item:nth-child(2) { animation-delay: .30s; }
+article.about.active .service-list .service-item:nth-child(3) { animation-delay: .45s; }
+article.about.active .service-list .service-item:nth-child(4) { animation-delay: .60s; }
+
+/* About: PROGRAMING AND DESIGN SKILLS (Front-End heading and slider) */
+article.about.active .testimonials .h3.testimonials-title {
+  opacity: 0; transform: translateY(10px);
+  animation: fadeUpAbout .6s ease forwards .75s;
+}
+article.about.active .testimonials .clint { /* slider wrapper */
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUpAbout .7s ease forwards .9s;
+}
+
+/* About: Mobile section image */
+article.about.active .clients .mobile_img {
+  opacity: 0; transform: translateY(12px) scale(.98);
+  animation: fadeUpAbout .7s ease forwards 1.05s;
+  border-radius: 16px;
 }
 
 .h2,
@@ -1009,6 +1053,39 @@ main {
   display: block;
   animation: scaleUp 0.25s ease forwards;
 }
+
+/* Scroll Reveal (generic across pages) */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+[data-reveal="left"] { transform: translateX(-16px); }
+[data-reveal="right"] { transform: translateX(16px); }
+[data-reveal].revealed { opacity: 1; transform: none; }
+
+/* Staggered entrance when opening Portfolio */
+.project-list .project-item.stagger-in {
+  opacity: 0;
+  transform: translateY(14px) scale(0.96);
+  animation: cardEnter 0.5s ease forwards;
+  animation-delay: var(--stagger-delay, 0ms);
+}
+
+@keyframes cardEnter {
+  to { opacity: 1; transform: none; }
+}
+
+/* Portfolio header subtle entrance */
+article.portfolio.active .article-title.portfolio-intro {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
 
 @keyframes scaleUp {
   0% {

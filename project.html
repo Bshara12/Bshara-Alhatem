@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project | Bshara Alhatem</title>
+  <meta id="meta-desc" name="description" content="Project details page for Bshara Alhatem portfolio." />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="shortcut icon" href="./assets/images/profil.png" type="image/x-icon" />
+  <meta property="og:type" content="website" />
+  <meta id="og-title" property="og:title" content="Project | Bshara Alhatem" />
+  <meta id="og-desc" property="og:description" content="Project details" />
+  <meta id="og-image" property="og:image" content="./assets/images/profil.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .project-hero{max-width:1200px;margin:0 auto;padding:28px 20px}
+    .project-layout{display:grid;grid-template-columns:280px 1fr;gap:24px}
+    .sidebar{position:relative}
+    .sidebar h1{margin:8px 0 6px;font-size:32px;line-height:1.2}
+    .sidebar .underline{width:48px;height:4px;background:gold;border-radius:6px;margin:8px 0 14px}
+    .project-card{background:#151515;border:1px solid #252525;border-radius:16px;padding:18px}
+    .project-cover{border-radius:14px;overflow:hidden}
+    .project-cover img{width:100%;height:auto;display:block}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .chip{background:#1e1e1e;color:#eaeaea;border:1px solid #3a3a3a;border-radius:999px;padding:6px 12px;font-size:12px}
+    .chip-wrap{display:flex;gap:8px;flex-wrap:wrap}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:12px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid #2a2a2a}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:#1f1f1f;color:#ffd700;border:1px solid #3a3a3a;padding:10px 14px;border-radius:10px;text-decoration:none;margin-top:14px}
+    .section-title{color:gold;margin-bottom:10px}
+    @media (max-width: 990px){.project-layout{grid-template-columns:1fr}.content-grid{grid-template-columns:1fr}}
+
+    /* animations */
+    .fade-in{opacity:0;transform:translateY(8px)}
+    .slide-up{opacity:0;transform:translateY(12px)}
+    .delay-1{animation-delay:.1s}
+    .delay-2{animation-delay:.2s}
+    .delay-3{animation-delay:.3s}
+    .delay-4{animation-delay:.4s}
+    .animate .fade-in{animation:fadeIn .6s ease forwards}
+    .animate .slide-up{animation:slideUp .6s ease forwards}
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+    @keyframes slideUp{to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion: reduce){
+      .fade-in,.slide-up{opacity:1!important;transform:none!important;animation:none!important}
+    }
+  </style>
+</head>
+<body>
+  <main class="project-hero">
+    <a href="index.html#portfolio" style="color:#ffd700">← Back to Portfolio</a>
+
+    <div class="project-layout" style="margin-top:16px">
+      <aside class="sidebar fade-in">
+        <h1 id="p-title" class="h2 article-title">Project</h1>
+        <div class="underline"></div>
+        <p id="p-category" class="project-category"></p>
+      </aside>
+
+      <div class="content">
+        <figure class="project-img project-cover project-card fade-in delay-1" style="display:none">
+          <img id="p-cover" src="" alt="Project cover" loading="lazy" />
+        </figure>
+
+        <div class="content-grid">
+          <section class="about-text project-card slide-up delay-2">
+            <h3 class="h3 section-title">Overview</h3>
+            <p id="p-desc"></p>
+            <div id="p-tech" class="chip-wrap" style="margin-top:12px"></div>
+            <a id="p-github" class="btn" href="#" target="_blank" rel="noopener">View on GitHub</a>
+          </section>
+
+          <section class="project-card slide-up delay-3">
+            <h3 class="h3 section-title">Gallery</h3>
+            <div id="p-gallery" class="gallery"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999">
+    <img id="lightbox-img" src="" alt="preview" style="max-width:92%;max-height:92%;border-radius:12px;border:1px solid #2a2a2a" />
+  </div>
+
+  <script src="./assets/data/projects.js"></script>
+  <script>
+    function getSlug(){
+      const u=new URL(window.location.href);
+      return u.searchParams.get('slug');
+    }
+    function render(project){
+      if(!project){
+        document.getElementById('p-title').textContent='Project not found';
+        document.getElementById('p-desc').textContent='The project you are looking for does not exist.';
+        document.querySelector('.project-img').style.display='none';
+        document.getElementById('p-github').style.display='none';
+        return;
+      }
+      document.title = project.title + ' | Bshara Alhatem';
+      document.getElementById('p-title').textContent = project.title;
+      document.getElementById('p-category').textContent = project.category || '';
+      document.getElementById('p-desc').textContent = project.description || '';
+      // dynamic SEO
+      var md = document.getElementById('meta-desc'); if(md) md.setAttribute('content', project.description || '');
+      var ot = document.getElementById('og-title'); if(ot) ot.setAttribute('content', project.title + ' | Bshara Alhatem');
+      var od = document.getElementById('og-desc'); if(od) od.setAttribute('content', project.description || '');
+      const cover = (project.images && project.images[0]) ? project.images[0] : null;
+      if(cover){
+        const coverImg=document.getElementById('p-cover');
+        coverImg.src = cover.startsWith('./') ? cover : ('./' + cover);
+        document.querySelector('.project-img').style.display='block';
+        var oi = document.getElementById('og-image'); if(oi) oi.setAttribute('content', coverImg.src);
+      }
+      const techWrap = document.getElementById('p-tech');
+      (project.tech||[]).forEach(t=>{
+        const span = document.createElement('span');
+        span.className='chip';
+        span.textContent=t;
+        techWrap.appendChild(span);
+      });
+      const gh = document.getElementById('p-github');
+      gh.href = project.github || '#';
+
+      const gallery = document.getElementById('p-gallery');
+      (project.images||[]).forEach(src=>{
+        const img = document.createElement('img');
+        img.src = src.startsWith('./') ? src : ('./' + src);
+        img.alt = project.title + ' image';
+        img.addEventListener('click', ()=> openLightbox(img.src));
+        gallery.appendChild(img);
+      });
+    }
+    function openLightbox(src){
+      var lb = document.getElementById('lightbox');
+      var li = document.getElementById('lightbox-img');
+      li.src = src; lb.style.display='flex';
+    }
+    document.getElementById('lightbox').addEventListener('click', function(){
+      this.style.display='none';
+    });
+    (function init(){
+      const slug = getSlug();
+      const proj = (window.PROJECTS||[]).find(p=>p.slug===slug);
+      render(proj);
+      // trigger entry animations once content is ready
+      requestAnimationFrame(()=> document.body.classList.add('animate'));
+    })();
+  </script>
+</body>
+</html>

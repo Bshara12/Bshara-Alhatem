@@ -112,5 +112,27 @@ window.PROJECTS = window.PROJECTS.concat([
   { slug: "profile-page", title: "profiole page", category: "Web development", description: "Personal profile page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (10).png"] },
   { slug: "art-gallery", title: "Art Gallery", category: "Applications", description: "Art gallery app UI.", tech: ["Flutter"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (11).png"] },
   // Bank Management System (multi-platform)
-  { slug: "bank-management", title: "Bank Management System", category: "web development, applications", description: "Banking management system with customer accounts, transactions, and dashboards for Web and Mobile.", tech: ["React","Flutter","Laravel"], github: "https://github.com/Bshara12", images: ["./assets/images/project-6.png"] }
+  { 
+    slug: "bank-management", 
+    title: "Bank Management System", 
+    category: "Web development, Applications", 
+    description: "Enterprise-grade modular banking system (Web & Mobile) covering customers, accounts, transactions, dashboards. Implements behavioral and structural patterns (Repository, Strategy, Factory, Composite, Adapter, Decorator; Composer-based dependency management). DevOps with Dockerized services and CI/CD pipelines. Non-functional focus on security, performance (100+ concurrent transactions), scalability, logging, monitoring, testability. Includes an intelligent usage analyzer that learns from user behavior to provide proactive financial recommendations, and a finance Q&A chatbot for customer support and guidance.",
+    tech: ["React","Flutter","Laravel","Docker","CI/CD","Composer","Design Patterns","Nginx","PostgreSQL","Redis"], 
+    github: "https://github.com/Bshara12", 
+    images: [
+      "./assets/images/Screenshot 2025-12-20 233459.png",
+      "./assets/images/Screenshot 2025-12-20 233349.png",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.39.58 PM.jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.39.59 PM.jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.40.00 PM.jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.40.05 PM.jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.40.07 PM (1).jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.40.09 PM (1).jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 5.40.09 PM.jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 6.21.29 PM (1).jpeg",
+      "./assets/images/WhatsApp Image 2025-12-20 at 6.21.29 PM (2).jpeg",
+      "./assets/images/Screenshot 2025-12-20 233319.png",
+      "./assets/images/Screenshot 2025-12-20 233424.png"
+    ] 
+  }
 ]);

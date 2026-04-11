@@ -7,7 +7,7 @@ window.PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Bshara12",
     images: [
-      "./assets/images/تنزيل (6).png"
+      "./assets/images/project-events.png"
     ]
   },
   {
@@ -18,7 +18,7 @@ window.PROJECTS = [
     tech: ["React", "CSS"],
     github: "https://github.com/Bshara12",
     images: [
-      "./assets/images/تنزيل (7).png"
+      "./assets/images/project-freelance.png"
     ]
   },
   {
@@ -29,7 +29,7 @@ window.PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Bshara12",
     images: [
-      "./assets/images/finance app.png"
+      "./assets/images/finance-app.png"
     ]
   },
   {
@@ -40,7 +40,7 @@ window.PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Bshara12",
     images: [
-      "./assets/images/تنزيل (9).png"
+      "./assets/images/project-restaurant.png"
     ]
   },
   {
@@ -100,17 +100,17 @@ window.PROJECTS = [
 ];
 // Additional items mapped from portfolio grid
 window.PROJECTS = window.PROJECTS.concat([
-  { slug: "orizon", title: "Orizon", category: "Web development", description: "Landing page concept.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (1).png"] },
-  { slug: "clipboard", title: "Clipboard landing page", category: "Web development", description: "Clipboard app landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (2).png"] },
+  { slug: "orizon", title: "Orizon", category: "Web development", description: "Landing page concept.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-orizon.png"] },
+  { slug: "clipboard", title: "Clipboard landing page", category: "Web development", description: "Clipboard app landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-clipboard.png"] },
   { slug: "fruit-shop", title: "fruite shop", category: "Applications", description: "Mobile fruit shop UI.", tech: ["Flutter"], github: "https://github.com/Bshara12", images: ["./assets/images/images.jpeg"] },
   { slug: "dsm", title: "DSM.", category: "Web design", description: "Design system marketing page.", tech: ["HTML","CSS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-5.png"] },
   { slug: "metaspark", title: "MetaSpark", category: "Web design", description: "Product website concept.", tech: ["HTML","CSS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-6.png"] },
-  { slug: "fylo", title: "Fylo landing page", category: "Web development", description: "Fylo storage landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (3).png"] },
-  { slug: "huddle", title: "Huddle landing page", category: "Web development", description: "Community landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (4).png"] },
-  { slug: "chat-app-css", title: "Chat app CSS illustration", category: "Web development", description: "CSS illustration challenge.", tech: ["HTML","CSS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (5).png"] },
-  { slug: "workit", title: "Workit landing page", category: "Web development", description: "Workit landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (8).png"] },
-  { slug: "profile-page", title: "profiole page", category: "Web development", description: "Personal profile page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (10).png"] },
-  { slug: "art-gallery", title: "Art Gallery", category: "Applications", description: "Art gallery app UI.", tech: ["Flutter"], github: "https://github.com/Bshara12", images: ["./assets/images/تنزيل (11).png"] },
+  { slug: "fylo", title: "Fylo landing page", category: "Web development", description: "Fylo storage landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-fylo.png"] },
+  { slug: "huddle", title: "Huddle landing page", category: "Web development", description: "Community landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-huddle.png"] },
+  { slug: "chat-app-css", title: "Chat app CSS illustration", category: "Web development", description: "CSS illustration challenge.", tech: ["HTML","CSS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-chat-app.png"] },
+  { slug: "workit", title: "Workit landing page", category: "Web development", description: "Workit landing page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-workit.png"] },
+  { slug: "profile-page", title: "profiole page", category: "Web development", description: "Personal profile page.", tech: ["HTML","CSS","JS"], github: "https://github.com/Bshara12", images: ["./assets/images/project-profile.png"] },
+  { slug: "art-gallery", title: "Art Gallery", category: "Applications", description: "Art gallery app UI.", tech: ["Flutter"], github: "https://github.com/Bshara12", images: ["./assets/images/project-art-gallery.png"] },
   // Bank Management System (multi-platform)
   { 
     slug: "bank-management", 
@@ -120,7 +120,7 @@ window.PROJECTS = window.PROJECTS.concat([
     tech: ["React","Flutter","Laravel","Docker","CI/CD","Composer","Design Patterns","Nginx","PostgreSQL","Redis"], 
     github: "https://github.com/Bshara12", 
     images: [
-      "./assets/images/Screenshot 2025-12-20 233459.png",
+      "./assets/images/banking-dashboard-01.png",
       "./assets/images/Screenshot 2025-12-20 233349.png",
       "./assets/images/WhatsApp Image 2025-12-20 at 5.39.58 PM.jpeg",
       "./assets/images/WhatsApp Image 2025-12-20 at 5.39.59 PM.jpeg",

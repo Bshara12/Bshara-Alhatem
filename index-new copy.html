@@ -1,0 +1,1652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bshara AlHatem | Backend Engineer</title>
+    <meta
+      name="description"
+      content="Bshara AlHatem — Backend Engineer specializing in Laravel, PHP, PostgreSQL, Docker. Building secure, scalable APIs for fintech and enterprise systems."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bshara12.github.io/Bshara-Alhatem/" />
+    <meta property="og:title" content="Bshara AlHatem | Backend Engineer" />
+    <meta
+      property="og:description"
+      content="Backend engineer building secure, scalable APIs — Laravel, PHP, PostgreSQL, Docker, CI/CD."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/images/profil.png" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/profil.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bshara AlHatem",
+        "jobTitle": "Backend Engineer",
+        "email": "mailto:bshara.h2003@gmail.com",
+        "url": "https://bshara12.github.io/Bshara-Alhatem/",
+        "sameAs": ["https://github.com/Bshara12"]
+      }
+    </script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #0f172a;
+        --navy2: #1e293b;
+        --navy3: #334155;
+        --accent: #3b82f6;
+        --accent2: #60a5fa;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --border: #1e293b;
+        --white: #f8fafc;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--navy);
+        color: var(--text);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      a {
+        color: var(--accent2);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      a:hover {
+        color: var(--white);
+      }
+
+      /* ── LAYOUT ── */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(15, 23, 42, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 2rem;
+      }
+      .nav-logo {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--white);
+        letter-spacing: -0.3px;
+      }
+      .nav-logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+        color: var(--muted);
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+      .nav-links a:hover {
+        color: var(--accent2);
+      }
+      .nav-cta {
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent2);
+        padding: 0.45rem 1.1rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .nav-cta:hover {
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
+        align-items: center;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .hero-tag {
+        font-size: 0.85rem;
+        color: var(--accent2);
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .hero-name {
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        font-weight: 600;
+        color: var(--white);
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 0.8rem;
+      }
+      .hero-title {
+        font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+        color: var(--muted);
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+      }
+      .hero-desc {
+        font-size: 1rem;
+        color: var(--muted);
+        max-width: 520px;
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: background 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        background: #2563eb;
+        color: #fff;
+      }
+      .btn-outline {
+        border: 1px solid var(--navy3);
+        color: var(--text);
+        padding: 0.7rem 1.6rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+      .btn-outline:hover {
+        border-color: var(--accent2);
+        color: var(--accent2);
+      }
+      .hero-avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.12);
+      }
+
+      /* ── SECTION BASE ── */
+      section {
+        padding: 6rem 0;
+      }
+      .section-label {
+        font-size: 0.8rem;
+        color: var(--accent2);
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 0.6rem;
+      }
+      .section-title {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: var(--white);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        letter-spacing: -0.5px;
+      }
+      .section-line {
+        width: 48px;
+        height: 3px;
+        background: var(--accent);
+        border-radius: 2px;
+        margin-bottom: 3rem;
+      }
+
+      /* ── ABOUT ── */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .about-text p {
+        color: var(--muted);
+        margin-bottom: 1.2rem;
+        line-height: 1.8;
+      }
+      .about-text p strong {
+        color: var(--text);
+      }
+      .about-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .about-link {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.2s;
+      }
+      .about-link:hover {
+        border-color: var(--accent);
+        color: var(--accent2);
+      }
+      .about-img {
+        width: 100%;
+        max-width: 280px;
+        border-radius: 12px;
+        border: 2px solid var(--navy3);
+        object-fit: cover;
+      }
+
+      /* ── STACK ── */
+      #stack {
+        background: var(--navy2);
+      }
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+      .stack-card {
+        background: var(--navy);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: border-color 0.2s;
+      }
+      .stack-card:hover {
+        border-color: var(--navy3);
+      }
+      .stack-card-title {
+        font-size: 0.75rem;
+        color: var(--accent2);
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        background: rgba(59, 130, 246, 0.1);
+        color: var(--accent2);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .tag.proficient {
+        background: rgba(59, 130, 246, 0.15);
+        border-color: rgba(59, 130, 246, 0.35);
+      }
+      .tag.familiar {
+        background: rgba(148, 163, 184, 0.08);
+        color: var(--muted);
+        border-color: rgba(148, 163, 184, 0.2);
+      }
+
+      /* ── PROJECTS ── */
+      .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+      }
+      .project-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .project-card.reverse {
+        direction: rtl;
+      }
+      .project-card.reverse > * {
+        direction: ltr;
+      }
+      .project-img-wrap {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--navy2);
+        aspect-ratio: 16/10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .project-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .project-img-wrap:hover img {
+        transform: scale(1.03);
+      }
+      .project-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 2rem;
+      }
+      .project-placeholder svg {
+        opacity: 0.3;
+      }
+      .project-number {
+        font-size: 0.8rem;
+        color: var(--accent2);
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+      }
+      .project-name {
+        font-size: 1.5rem;
+        color: var(--white);
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        letter-spacing: -0.3px;
+      }
+      .project-desc {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      .project-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+      }
+      .stat-chip {
+        background: var(--navy2);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 0.3rem 0.8rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .stat-chip.highlight {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.25);
+        color: var(--accent2);
+      }
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .tech-tag {
+        font-size: 0.78rem;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        padding: 0.25rem 0.7rem;
+        border-radius: 4px;
+        font-family: "Inter", monospace;
+      }
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+      .project-link {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .project-link:hover {
+        color: var(--accent2);
+      }
+      .project-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* ── OTHER PROJECTS ── */
+      .other-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .other-card {
+        background: var(--navy2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .other-card:hover {
+        border-color: var(--navy3);
+        transform: translateY(-3px);
+      }
+      .other-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+      .folder-icon {
+        color: var(--accent2);
+      }
+      .other-card-links {
+        display: flex;
+        gap: 0.7rem;
+      }
+      .other-card-links a {
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .other-card-links a:hover {
+        color: var(--accent2);
+      }
+      .other-card h4 {
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: 500;
+        margin-bottom: 0.6rem;
+      }
+      .other-card p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.7;
+        flex: 1;
+        margin-bottom: 1.2rem;
+      }
+      .other-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: auto;
+      }
+      .other-tech span {
+        font-size: 0.75rem;
+        color: var(--muted);
+        font-family: "Inter", monospace;
+      }
+      .other-tech span:not(:last-child)::after {
+        content: "·";
+        margin-left: 0.4rem;
+      }
+
+      /* ── EXPERIENCE ── */
+      #experience {
+        background: var(--navy2);
+      }
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: var(--border);
+        border-radius: 2px;
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: -2.45rem;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 2px solid var(--navy2);
+      }
+      .timeline-date {
+        font-size: 0.78rem;
+        color: var(--accent2);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.4rem;
+      }
+      .timeline-role {
+        font-size: 1.05rem;
+        color: var(--white);
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+      }
+      .timeline-org {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin-bottom: 0.8rem;
+      }
+      .timeline-desc {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .timeline-desc li {
+        margin-bottom: 0.4rem;
+      }
+
+      /* ── EDUCATION ── */
+      .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .edu-card {
+        background: var(--navy2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
+      .edu-card-year {
+        font-size: 0.78rem;
+        color: var(--accent2);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+      .edu-card h4 {
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+      }
+      .edu-card p {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      /* ── CONTACT ── */
+      .contact-wrap {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .contact-wrap .section-line {
+        margin: 0 auto 3rem;
+      }
+      .contact-intro {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 2.5rem;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .contact-link-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        border: 1px solid var(--border);
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        transition: all 0.2s;
+      }
+      .contact-link-item:hover {
+        border-color: var(--accent);
+        color: var(--accent2);
+      }
+      .contact-link-item svg {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        text-align: center;
+        padding: 2.5rem;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      footer a {
+        color: var(--muted);
+      }
+      footer a:hover {
+        color: var(--accent2);
+      }
+
+      /* ── MOBILE ── */
+      @media (max-width: 768px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-avatar {
+          width: 140px;
+          height: 140px;
+          margin: 0 auto;
+        }
+        .hero-btns {
+          justify-content: center;
+        }
+        .hero-desc {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-img {
+          display: none;
+        }
+        .project-card,
+        .project-card.reverse {
+          grid-template-columns: 1fr;
+          direction: ltr;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* ── HERO ENTRANCE ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes avatarPop {
+        0% {
+          opacity: 0;
+          transform: scale(0.82) translateY(20px);
+        }
+        65% {
+          transform: scale(1.05) translateY(-4px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+      @keyframes tagSlide {
+        from {
+          opacity: 0;
+          transform: translateX(-14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes cursorBlink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero-tag {
+        opacity: 0;
+        animation: tagSlide 0.5s ease both 0.1s;
+      }
+      .hero-name {
+        opacity: 0;
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both 0.25s;
+      }
+      .hero-title {
+        opacity: 0;
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both 0.42s;
+      }
+      .hero-desc {
+        opacity: 0;
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both 0.58s;
+      }
+      .hero-btns {
+        opacity: 0;
+        animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both 0.72s;
+      }
+      .hero-avatar {
+        opacity: 0;
+        animation: avatarPop 0.85s cubic-bezier(0.22, 1, 0.36, 1) both 0.3s;
+      }
+
+      .hero-name::after {
+        content: "|";
+        color: var(--accent);
+        margin-left: 3px;
+        font-weight: 300;
+        animation: cursorBlink 1s step-end infinite 1.4s;
+      }
+
+      /* ── SCROLL REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.from-left {
+        transform: translateX(-36px);
+      }
+      .reveal.from-right {
+        transform: translateX(36px);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav>
+      <div class="nav-inner">
+        <span class="nav-logo">B<span>.</span>AlHatem</span>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="./assets/cv/bshara-alhatem-cv.pdf" download class="nav-cta"
+          >Download CV</a
+        >
+      </div>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="hero-tag">Available for backend roles</p>
+          <h1 class="hero-name">Bshara AlHatem</h1>
+          <p class="hero-title">Backend Engineer</p>
+          <p class="hero-desc">
+            Building secure, scalable APIs for fintech and enterprise systems.
+            2+ years designing full-stack systems with
+            <strong style="color: var(--text)"
+              >Laravel, PostgreSQL, Docker</strong
+            >
+            — from database schema to CI/CD deployment.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a
+              href="./assets/cv/bshara-alhatem-cv.pdf"
+              download
+              class="btn-outline"
+              >Download CV</a
+            >
+          </div>
+        </div>
+        <img
+          src="./assets/images/avatarprofil.png"
+          alt="Bshara AlHatem"
+          class="hero-avatar"
+        />
+      </div>
+    </section>
+
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about">
+      <div class="container">
+        <p class="section-label reveal">About</p>
+        <h2 class="section-title reveal">Who I am</h2>
+        <div class="section-line reveal"></div>
+        <div class="about-grid">
+          <div class="about-text reveal from-left">
+            <p>
+              Backend engineer with <strong>2+ years</strong> of hands-on
+              experience building secure, scalable APIs using Laravel and PHP —
+              including a full banking management system with
+              <strong>sub-200ms response times</strong> and multi-role
+              authentication architecture.
+            </p>
+            <p>
+              I design systems end-to-end: database schema, RESTful API,
+              Dockerized deployment, and CI/CD pipelines — with a strong focus
+              on
+              <strong
+                >data integrity, clean architecture, and maintainability</strong
+              >. I've built systems ranging from banking platforms and pharmacy
+              management to e-commerce and government complaint portals.
+            </p>
+            <p>
+              Currently completing my B.Sc. in Information Technology
+              Engineering and actively seeking backend roles focused on
+              reliability-critical systems — fintech, enterprise platforms, or
+              data-heavy applications.
+            </p>
+            <div class="about-links">
+              <a
+                href="https://github.com/Bshara12"
+                target="_blank"
+                rel="noopener"
+                class="about-link"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                  />
+                </svg>
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/bshara-alhatem"
+                target="_blank"
+                rel="noopener"
+                class="about-link"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"
+                  />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="mailto:bshara.h2003@gmail.com" class="about-link">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <polyline points="2,4 12,13 22,4" />
+                </svg>
+                Email
+              </a>
+            </div>
+          </div>
+          <img
+            src="./assets/images/profil.png"
+            alt="Bshara AlHatem"
+            class="about-img reveal from-right"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ STACK ═══════════════ -->
+    <section id="stack">
+      <div class="container">
+        <p class="section-label reveal">Tech Stack</p>
+        <h2 class="section-title reveal">What I work with</h2>
+        <div class="section-line reveal"></div>
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <p class="stack-card-title">Backend — Proficient</p>
+            <div class="stack-tags">
+              <span class="tag proficient">Laravel</span>
+              <span class="tag proficient">PHP</span>
+              <span class="tag proficient">RESTful API</span>
+              <span class="tag proficient">PostgreSQL</span>
+              <span class="tag proficient">MySQL</span>
+              <span class="tag proficient">Redis</span>
+            </div>
+          </div>
+
+          <div class="stack-card reveal">
+            <p class="stack-card-title">DevOps — Proficient</p>
+            <div class="stack-tags">
+              <span class="tag proficient">Docker</span>
+              <span class="tag proficient">CI/CD</span>
+              <span class="tag proficient">GitHub Actions</span>
+              <span class="tag proficient">Nginx</span>
+              <span class="tag familiar">Linux</span>
+            </div>
+          </div>
+
+          <div class="stack-card reveal">
+            <p class="stack-card-title">Frontend — Familiar</p>
+            <div class="stack-tags">
+              <span class="tag proficient">React.js</span>
+              <span class="tag proficient">Vue.js</span>
+              <span class="tag familiar">HTML/CSS/JS</span>
+              <span class="tag familiar">Bootstrap</span>
+              <span class="tag familiar">Tailwind</span>
+            </div>
+          </div>
+
+          <div class="stack-card reveal">
+            <p class="stack-card-title">Mobile & Patterns</p>
+            <div class="stack-tags">
+              <span class="tag proficient">Flutter</span>
+              <span class="tag proficient">Design Patterns</span>
+              <span class="tag familiar">Repository</span>
+              <span class="tag familiar">Factory</span>
+              <span class="tag familiar">Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-label reveal">Work</p>
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <div class="section-line reveal"></div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1: BANK -->
+          <div class="project-card reveal from-left">
+            <div class="project-img-wrap">
+              <img
+                src="./assets/images/banking-dashboard-01.png"
+                alt="Bank Management System dashboard"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p class="project-number">01 / Featured</p>
+              <h3 class="project-name">Bank Management System</h3>
+              <p class="project-desc">
+                Enterprise-grade banking platform covering customer management,
+                accounts, transactions, and real-time dashboards. Built with
+                service-based architecture, multi-role auth, an AI-powered
+                finance chatbot, and an intelligent usage analyzer that learns
+                from user behavior to deliver proactive recommendations.
+              </p>
+              <div class="project-stats">
+                <span class="stat-chip highlight">&lt;200ms API response</span>
+                <span class="stat-chip">20+ entity schema</span>
+                <span class="stat-chip">Docker + CI/CD</span>
+                <span class="stat-chip">Multi-role auth</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Nginx</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Bshara12"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: RESTAURANT -->
+          <div class="project-card reverse reveal from-right">
+            <div class="project-img-wrap">
+              <img
+                src="./assets/images/project-restaurant.png"
+                alt="Restaurant Management System"
+                loading="lazy"
+                onerror="
+                  this.style.display = 'none';
+                  this.parentElement.querySelector(
+                    '.project-placeholder',
+                  ).style.display = 'flex';
+                "
+              />
+              <div class="project-placeholder" style="display: none">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+                Restaurant System
+              </div>
+            </div>
+            <div>
+              <p class="project-number">02 / Featured</p>
+              <h3 class="project-name">Restaurant Management System</h3>
+              <p class="project-desc">
+                Full restaurant operations platform — menu management, order
+                tracking, table reservations, and staff roles. Backend API
+                designed for high-frequency ordering with real-time status
+                updates and kitchen queue management.
+              </p>
+              <div class="project-stats">
+                <span class="stat-chip highlight">Real-time orders</span>
+                <span class="stat-chip">Role-based access</span>
+                <span class="stat-chip">Dockerized</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Bshara12/Restaurant-System"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: TOURISM -->
+          <div class="project-card reveal from-left">
+            <div class="project-img-wrap">
+              <img src="./assets/images/tourism-project.png"  alt="Restaurant Management System" loading="lazy" onerror="this.style.display = 'none'; this.parentElement.querySelector('.project-placeholder',).style.display = 'flex';"/>
+
+              <div class="project-placeholder" style="display: none">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+                Tourism Platform
+              </div>
+            </div>
+            <div>
+              <p class="project-number">03 / Featured</p>
+              <h3 class="project-name">Tourism Platform</h3>
+              <p class="project-desc">
+                Full-featured tourism website for browsing destinations, booking
+                experiences, and managing reservations. Includes search and
+                filtering, user authentication, booking workflow, and an admin
+                panel for managing listings and bookings.
+              </p>
+              <div class="project-stats">
+                <span class="stat-chip highlight">Booking engine</span>
+                <span class="stat-chip">Search & filter</span>
+                <span class="stat-chip">Admin panel</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Bshara12/FlowTrip"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                    />
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OTHER PROJECTS -->
+        <div style="margin-top: 5rem">
+          <h3
+            style="
+              font-size: 1.1rem;
+              color: var(--white);
+              font-weight: 500;
+              text-align: center;
+              margin-bottom: 0.5rem;
+            "
+          >
+            Other Noteworthy Projects
+          </h3>
+          <p
+            style="
+              text-align: center;
+              color: var(--muted);
+              font-size: 0.9rem;
+              margin-bottom: 2.5rem;
+            "
+          >
+            More systems built with real-world requirements
+          </p>
+          <div class="other-grid">
+            <div class="other-card reveal" style="transition-delay: 0s">
+              <div class="other-card-top">
+                <svg
+                  class="folder-icon"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <div class="other-card-links">
+                  <a
+                    href="https://github.com/Bshara12"
+                    target="_blank"
+                    title="GitHub"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+              <h4>Government Complaint Portal</h4>
+              <p>
+                Civic platform for submitting, tracking, and managing government
+                service complaints with department routing and status
+                notifications.
+              </p>
+              <div class="other-tech">
+                <span>Laravel</span><span>React</span><span>MySQL</span
+                ><span>Docker</span>
+              </div>
+            </div>
+
+            <div class="other-card reveal" style="transition-delay: 0.1s">
+              <div class="other-card-top">
+                <svg
+                  class="folder-icon"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <div class="other-card-links">
+                  <a
+                    href="https://github.com/Bshara12"
+                    target="_blank"
+                    title="GitHub"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+              <h4>E-Commerce System</h4>
+              <p>
+                Full e-commerce platform with mobile app and admin web dashboard
+                — product management, cart, orders, and payment integration.
+              </p>
+              <div class="other-tech">
+                <span>Laravel</span><span>Flutter</span><span>React</span
+                ><span>MySQL</span>
+              </div>
+            </div>
+
+            <div class="other-card reveal" style="transition-delay: 0.2s">
+              <div class="other-card-top">
+                <svg
+                  class="folder-icon"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <div class="other-card-links">
+                  <a
+                    href="https://github.com/Bshara12"
+                    target="_blank"
+                    title="GitHub"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+              <h4>Pharmacy Warehouse System</h4>
+              <p>
+                Mobile + web system for managing medicine inventory, stock
+                alerts, expiry tracking, and multi-branch pharmacy operations.
+              </p>
+              <div class="other-tech">
+                <span>Flutter</span><span>Laravel</span><span>MySQL</span>
+              </div>
+            </div>
+
+            <div class="other-card reveal" style="transition-delay: 0.3s">
+              <div class="other-card-top">
+                <svg
+                  class="folder-icon"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <div class="other-card-links">
+                  <a
+                    href=https://github.com/Bshara12/HireHub"
+                    target="_blank"
+                    title="GitHub"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+              <h4>Jobs & Freelancing Portal</h4>
+              <p>
+                Employment platform for posting and searching job opportunities,
+                managing freelance contracts, and tracking applications.
+              </p>
+              <div class="other-tech">
+                <span>Laravel</span><span>React</span><span>MySQL</span>
+              </div>
+            </div>
+
+            <div class="other-card reveal" style="transition-delay: 0.4s">
+              <div class="other-card-top">
+                <svg
+                  class="folder-icon"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+                <div class="other-card-links">
+                  <a
+                    href="https://github.com/Bshara12"
+                    target="_blank"
+                    title="GitHub"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                      /></svg
+                  ></a>
+                </div>
+              </div>
+              <h4>Events Management System</h4>
+              <p>
+                Platform to create, manage, and organize events — registration,
+                ticketing, scheduling, and attendee management with CRUD
+                operations.
+              </p>
+              <div class="other-tech">
+                <span>Laravel</span><span>HTML/CSS/JS</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+    <section id="experience">
+      <div class="container">
+        <p class="section-label reveal">Experience</p>
+        <h2 class="section-title reveal">Background</h2>
+        <div class="section-line reveal"></div>
+        <div class="timeline">
+          <div class="timeline-item reveal from-left">
+            <div class="timeline-dot"></div>
+            <p class="timeline-date">2022 — Present</p>
+            <p class="timeline-role">Backend Engineer</p>
+            <p class="timeline-org">Freelance / Independent Projects</p>
+            <ul class="timeline-desc" style="padding-left: 1.2rem">
+              <li>
+                Architected and built 8+ full-stack systems including banking,
+                tourism, e-commerce, and pharmacy platforms
+              </li>
+              <li>
+                Designed RESTful APIs with sub-200ms response times using
+                Laravel, PostgreSQL, and Redis caching
+              </li>
+              <li>
+                Implemented Dockerized deployments and CI/CD pipelines with
+                GitHub Actions
+              </li>
+              <li>
+                Applied design patterns (Repository, Factory, Strategy,
+                Decorator) for maintainable, testable codebases
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item reveal from-left">
+            <div class="timeline-dot"></div>
+            <p class="timeline-date">2023 — 2024</p>
+            <p class="timeline-role">UI/UX Designer</p>
+            <p class="timeline-org">Freelance</p>
+            <p class="timeline-desc">
+              Designed interfaces and wireframes for web and mobile
+              applications, with a focus on usability and clean visual
+              hierarchy.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 4rem">
+          <h3
+            style="
+              font-size: 1rem;
+              color: var(--white);
+              font-weight: 500;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Education
+          </h3>
+          <div class="edu-grid">
+            <div class="edu-card reveal">
+              <p class="edu-card-year">2020 — Present</p>
+              <h4>B.Sc. Information Technology Engineering</h4>
+              <p>Syrian university — GPA 230.5/240</p>
+            </div>
+            <div class="edu-card reveal">
+              <p class="edu-card-year">2023</p>
+              <h4>Front-End Development Certificate</h4>
+              <p>Meta — Coursera</p>
+            </div>
+            <div class="edu-card reveal">
+              <p class="edu-card-year">2023</p>
+              <h4>UI/UX Design Certificate</h4>
+              <p>Meta — Coursera</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <p class="section-label" style="text-align: center">Contact</p>
+          <h2 class="section-title" style="text-align: center">Get In Touch</h2>
+          <div class="section-line reveal"></div>
+          <p class="contact-intro">
+            I'm currently open to backend engineering roles — full-time or
+            contract. If you have a project that needs reliable APIs, clean
+            architecture, or a backend engineer who ships, feel free to reach
+            out.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:bshara.h2003@gmail.com" class="contact-link-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="2,4 12,13 22,4" />
+              </svg>
+              bshara.h2003@gmail.com
+            </a>
+            <a
+              href="https://github.com/Bshara12"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-item"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56C20.21 21.38 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"
+                />
+              </svg>
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/bshara-alhatem"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-item"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"
+                />
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              href="https://wa.me/963938246910"
+              target="_blank"
+              rel="noopener"
+              class="contact-link-item"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.47 14.38c-.29-.14-1.7-.84-1.97-.93-.26-.1-.46-.14-.65.14-.2.28-.74.93-.91 1.13-.17.19-.33.21-.62.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.2.05-.36-.02-.5-.07-.14-.65-1.57-.89-2.15-.23-.56-.47-.49-.65-.5h-.55c-.19 0-.5.07-.76.36-.26.28-1 1-.97 2.43.03 1.43 1.03 2.81 1.18 3 .14.19 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.46 21.51 10.19 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"
+                />
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+          <a
+            href="./assets/cv/bshara-alhatem-cv.pdf"
+            download
+            class="btn-primary"
+            style="display: inline-block"
+          >
+            Download CV (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer>
+      <p>
+        Designed & built by
+        <a href="https://github.com/Bshara12">Bshara AlHatem</a> · 2025
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) {
+          els.forEach(function (el) {
+            el.classList.add("visible");
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

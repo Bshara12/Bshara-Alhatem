@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bshara12.github.io/Bshara-Alhatem/sitemap.xml
